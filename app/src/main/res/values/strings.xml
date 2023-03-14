@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Jetpack Compose Uware Tutorial</string>
+    <string name="home_screen">Tela Home</string>
+    <string name="back_button">Botão Voltar</string>
+    <string name="uware_logo">Uware Logo</string>
+    <string name="splash_screen">Tela Splash</string>
+    <string name="finish_button">Finalizar App</string>
+    <string name="name">Nome</string>
+    <string name="name_screen">Tela do Nome</string>
 </resources>
