@@ -3,21 +3,20 @@ package br.com.uware.jetpackcomposeuwaretutorial
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
+import br.com.uware.jetpackcomposeuwaretutorial.presentation.core.rememberMainApp
+import br.com.uware.jetpackcomposeuwaretutorial.presentation.navigation.AppNavigation
 import br.com.uware.jetpackcomposeuwaretutorial.presentation.theme.JetpackComposeUwareTutorialTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
+            /**
+             * Classe MainApp sendo instanciada.
+             */
+            val mainApp = rememberMainApp()
             JetpackComposeUwareTutorialTheme {
-
+                AppNavigation(mainApp = mainApp)
             }
         }
     }
