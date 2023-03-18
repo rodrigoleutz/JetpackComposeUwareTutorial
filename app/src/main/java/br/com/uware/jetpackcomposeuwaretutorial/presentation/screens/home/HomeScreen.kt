@@ -1,18 +1,19 @@
 package br.com.uware.jetpackcomposeuwaretutorial.presentation.screens.home
 
 import android.app.Activity
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.height
 import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import br.com.uware.jetpackcomposeuwaretutorial.R
+import br.com.uware.jetpackcomposeuwaretutorial.presentation.components.layouts.column.ColumnCenterScrollComponent
 import br.com.uware.jetpackcomposeuwaretutorial.presentation.core.MainApp
 import br.com.uware.jetpackcomposeuwaretutorial.presentation.navigation.AppScreens
 import br.com.uware.jetpackcomposeuwaretutorial.presentation.theme.AppDimensions
@@ -25,6 +26,7 @@ import br.com.uware.jetpackcomposeuwaretutorial.presentation.theme.AppDimensions
  * @param mainApp Classe MainApp criada no começo com rememberMainApp.
  * @author Rodrigo Leutz
  * @version 1.0.0 - 2023 03 13 - Navigation no Jetpack Compose
+ * @version 1.0.1 - 2023 03 14 - Column Layout no Jetpack Compose(Mudança na Column)
  */
 @Composable
 fun HomeScreen(
@@ -34,11 +36,7 @@ fun HomeScreen(
     val name = remember {
         mutableStateOf("")
     }
-    Column(
-        modifier = Modifier.fillMaxSize(),
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center
-    ) {
+    ColumnCenterScrollComponent {
         Text(text = stringResource(id = R.string.home_screen))
         Spacer(modifier = Modifier.height(AppDimensions.LARGE))
         TextField(

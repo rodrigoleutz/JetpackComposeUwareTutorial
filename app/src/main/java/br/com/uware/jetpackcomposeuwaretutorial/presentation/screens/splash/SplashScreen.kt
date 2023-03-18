@@ -10,6 +10,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import br.com.uware.jetpackcomposeuwaretutorial.R
+import br.com.uware.jetpackcomposeuwaretutorial.presentation.components.layouts.column.ColumnCenterComponent
 import br.com.uware.jetpackcomposeuwaretutorial.presentation.core.MainApp
 import br.com.uware.jetpackcomposeuwaretutorial.presentation.navigation.AppScreens
 import br.com.uware.jetpackcomposeuwaretutorial.presentation.navigation.popUpTo
@@ -24,6 +25,7 @@ import kotlinx.coroutines.delay
  * @param mainApp Classe MainApp criada no começo com rememberMainApp.
  * @author Rodrigo Leutz
  * @version 1.0.0 - 2023 03 13 - Navigation no Jetpack Compose
+ * @version 1.0.1 - 2023 03 14 - Column Layout no Jetpack Compose(Mudança na Column)
  */
 @Composable
 fun SplashScreen(
@@ -36,11 +38,7 @@ fun SplashScreen(
          */
         mainApp.navHostController.popUpTo(AppScreens.HomeScreen.name)
     })
-    Column(
-        modifier = Modifier.fillMaxSize(),
-        verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally
-    ) {
+    ColumnCenterComponent {
         Image(
             modifier = Modifier
                 .fillMaxWidth()

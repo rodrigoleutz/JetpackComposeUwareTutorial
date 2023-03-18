@@ -9,6 +9,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import br.com.uware.jetpackcomposeuwaretutorial.R
+import br.com.uware.jetpackcomposeuwaretutorial.presentation.components.layouts.column.ColumnCenterComponent
 import br.com.uware.jetpackcomposeuwaretutorial.presentation.core.MainApp
 import br.com.uware.jetpackcomposeuwaretutorial.presentation.theme.AppDimensions
 
@@ -27,11 +28,7 @@ fun NameScreen(
     mainApp: MainApp,
     name: String
 ) {
-    Column(
-        modifier = Modifier.fillMaxSize(),
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center
-    ) {
+    ColumnCenterComponent {
         Text(text = name)
         Spacer(modifier = Modifier.height(AppDimensions.LARGE))
         Button(onClick = {
