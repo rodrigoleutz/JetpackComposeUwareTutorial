@@ -7,6 +7,7 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
@@ -27,6 +28,7 @@ import br.com.uware.jetpackcomposeuwaretutorial.presentation.theme.AppDimensions
  * @author Rodrigo Leutz
  * @version 1.0.0 - 2023 03 13 - Navigation no Jetpack Compose
  * @version 1.0.1 - 2023 03 14 - Column Layout no Jetpack Compose(Mudança na Column)
+ * @version 1.0.2 - 2023 03 18 - Top App Bar no Jetpack Compose(Modificando titulo no LaunchedEffect)
  */
 @Composable
 fun HomeScreen(
@@ -36,6 +38,12 @@ fun HomeScreen(
     val name = remember {
         mutableStateOf("")
     }
+    LaunchedEffect(key1 = true, block = {
+        /**
+         * Modificando título na Top App Bar
+         */
+        mainApp.viewModel.topBar.setTitle(R.string.home_screen)
+    })
     ColumnCenterScrollComponent {
         Text(text = stringResource(id = R.string.home_screen))
         Spacer(modifier = Modifier.height(AppDimensions.LARGE))

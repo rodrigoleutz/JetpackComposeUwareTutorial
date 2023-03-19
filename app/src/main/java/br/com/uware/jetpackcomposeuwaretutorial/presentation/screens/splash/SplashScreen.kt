@@ -26,6 +26,7 @@ import kotlinx.coroutines.delay
  * @author Rodrigo Leutz
  * @version 1.0.0 - 2023 03 13 - Navigation no Jetpack Compose
  * @version 1.0.1 - 2023 03 14 - Column Layout no Jetpack Compose(Mudança na Column)
+ * @version 1.0.2 - 2023 03 18 - Top App Bar no Jetpack Compose(Habilitando após o delay)
  */
 @Composable
 fun SplashScreen(
@@ -33,6 +34,10 @@ fun SplashScreen(
 ) {
     LaunchedEffect(key1 = true, block = {
         delay(2000)
+        /**
+         * Habilitando Top App Bar
+         */
+        mainApp.viewModel.topBar.enabled()
         /**
          * Navega para HomeScreen removendo SplashScreen da navBackStackEntry.
          */
