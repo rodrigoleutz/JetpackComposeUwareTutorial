@@ -7,6 +7,7 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import br.com.uware.jetpackcomposeuwaretutorial.presentation.core.MainApp
+import br.com.uware.jetpackcomposeuwaretutorial.presentation.widgets.drawer_menu.NavigationDrawerWidget
 import br.com.uware.jetpackcomposeuwaretutorial.presentation.widgets.top_bar.TopAppBarWidget
 
 /**
@@ -18,24 +19,30 @@ import br.com.uware.jetpackcomposeuwaretutorial.presentation.widgets.top_bar.Top
  * @param content Conteúdo da tela.
  * @author Rodrigo Leutz
  * @version 1.0.0 - 2023 03 18 - Top App Bar no Jetpack Compose
+ * @version 1.0.1 - 2023 03 19 - Drawer Menu no Jetpack Compose(Adição NavigationDrawerWidget e drawerstate na Top App Bar)
  */
 @Composable
 fun MainScreen(
     mainApp: MainApp,
     content: @Composable () -> Unit
 ) {
-    Scaffold(
-        modifier = Modifier.fillMaxSize(),
-        topBar = {
-            TopAppBarWidget(topBar = mainApp.viewModel.topBar)
-        }
-    ) { innerPadding ->
-        Box(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(innerPadding)
-        ) {
-            content()
+    NavigationDrawerWidget(mainApp = mainApp) {
+        Scaffold(
+            modifier = Modifier.fillMaxSize(),
+            topBar = {
+                TopAppBarWidget(
+                    topBar = mainApp.viewModel.topBar,
+                    drawerState = mainApp.drawerState
+                )
+            }
+        ) { innerPadding ->
+            Box(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(innerPadding)
+            ) {
+                content()
+            }
         }
     }
 }
