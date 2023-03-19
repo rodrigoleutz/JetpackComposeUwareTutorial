@@ -1,14 +1,16 @@
 package br.com.uware.jetpackcomposeuwaretutorial.presentation.widgets.top_bar
 
 import androidx.compose.animation.AnimatedVisibility
-import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.Text
-import androidx.compose.material3.TopAppBar
-import androidx.compose.material3.TopAppBarDefaults
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.rounded.Menu
+import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
 import br.com.uware.jetpackcomposeuwaretutorial.presentation.core.MainApp
 import br.com.uware.jetpackcomposeuwaretutorial.presentation.core.states.top_bar.TopBarState
+import kotlinx.coroutines.launch
 
 
 /**
@@ -19,35 +21,40 @@ import br.com.uware.jetpackcomposeuwaretutorial.presentation.core.states.top_bar
  * @param topBar TopBarState que é injetado no PresentationModule.
  * @author Rodrigo Leutz
  * @version 1.0.0 - 2023 03 18 - Top App Bar no Jetpack Compose
+ * @version 1.0.0 - 2023 03 19 - Drawer Menu no Jetpack Compose(Adição do ícone de menu)
  */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun TopAppBarWidget(
-    topBar: TopBarState
+    topBar: TopBarState,
+    drawerState: DrawerState
 ) {
-    val isEnabled = remember {
-        topBar.isEnabled
+    val scope = rememberCoroutineScope()
+    val topBarState = remember {
+        mutableStateOf<TopBarState>(topBar)
     }
-    val title = remember {
-        topBar.title
-    }
-    val containerColor = remember {
-        topBar.containerColor
-    }
-    val contentColor = remember {
-        topBar.contentColor
-    }
-    AnimatedVisibility(visible = isEnabled.value) {
+    AnimatedVisibility(visible = topBarState.value.isEnabled.value) {
         TopAppBar(
             title = {
-                Text(text = title.value)
+                Text(text = topBarState.value.title.value)
             },
             colors = TopAppBarDefaults.topAppBarColors(
-                containerColor = containerColor.value,
-                titleContentColor = contentColor.value,
-                actionIconContentColor = contentColor.value,
-                navigationIconContentColor = contentColor.value
-            )
+                containerColor = topBarState.value.containerColor.value,
+                titleContentColor = topBarState.value.contentColor.value,
+                actionIconContentColor = topBarState.value.contentColor.value,
+                navigationIconContentColor = topBarState.value.contentColor.value
+            ),
+            navigationIcon = {
+                IconButton(
+                    onClick = {
+                        scope.launch {
+                            drawerState.open()
+                        }
+                    }
+                ) {
+                    Icon(imageVector = Icons.Rounded.Menu, contentDescription = null)
+                }
+            }
         )
     }
 }

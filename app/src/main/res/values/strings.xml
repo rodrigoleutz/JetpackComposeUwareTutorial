@@ -7,4 +7,5 @@
     <string name="finish_button">Finalizar App</string>
     <string name="name">Nome</string>
     <string name="name_screen">Tela do Nome</string>
+    <string name="exit">Sair</string>
 </resources>
