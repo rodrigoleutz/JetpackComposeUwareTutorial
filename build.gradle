@@ -11,4 +11,6 @@ plugins {
     id 'com.android.library' version '7.4.2' apply false
     // Kotlin modificado para 1.8.0
     id 'org.jetbrains.kotlin.android' version '1.8.0' apply false
+    // Dagger Hilt(injeção de dependência)
+    id 'com.google.dagger.hilt.android' version "2.44" apply false
 }
