@@ -8,4 +8,18 @@
     <string name="name">Nome</string>
     <string name="name_screen">Tela do Nome</string>
     <string name="exit">Sair</string>
+
+    <!-- IMC Strings -->
+    <string name="imc_screen">Calculadora de IMC</string>
+    <string name="weight">Peso</string>
+    <string name="height">Altura</string>
+    <string name="calculate">Calcular</string>
+    <string name="imc_string_0">Muito abaixo do peso.</string>
+    <string name="imc_string_1">Abaixo do peso.</string>
+    <string name="imc_string_2">Peso normal.</string>
+    <string name="imc_string_3">Acima do peso.</string>
+    <string name="imc_string_4">Obesidade I.</string>
+    <string name="imc_string_5">Obesidade II(severa).</string>
+    <string name="imc_string_6">Obesidade III(mórbida).</string>
+    <string name="close">Fechar</string>
 </resources>
