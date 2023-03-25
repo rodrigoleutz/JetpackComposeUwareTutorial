@@ -12,9 +12,10 @@ Autor: Rodrigo Leutz
 - 03 -> Top App Bar no Jetpack Compose = https://uware.com.br/top-app-bar-no-jetpack-compose/
 - 04 -> Drawer Menu no Jetpack Compose = https://uware.com.br/drawer-menu-no-jetpack-compose/
 - 05 -> Loading no Jetpack Compose = https://uware.com.br/loading-no-jetpack-compose/
+- 06 -> Calculadora de IMC no Jetpack Compose = https://uware.com.br/calculadora-de-imc-no-jetpack-compose/
 
 <hr>
 <pre>
 Acesse também o canal Android Studio Brasil no telegram:
-https://t.me/android_studio_brasil
+<a href="https://t.me/android_studio_brasil">Android Studio Brasil</a>
 </pre>
