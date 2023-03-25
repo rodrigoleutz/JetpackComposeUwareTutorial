@@ -7,6 +7,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
 import br.com.uware.jetpackcomposeuwaretutorial.presentation.core.MainApp
 import br.com.uware.jetpackcomposeuwaretutorial.presentation.screens.home.HomeScreen
+import br.com.uware.jetpackcomposeuwaretutorial.presentation.screens.imc.ImcScreen
 import br.com.uware.jetpackcomposeuwaretutorial.presentation.screens.name.NameInputScreen
 import br.com.uware.jetpackcomposeuwaretutorial.presentation.screens.name.NameScreen
 import br.com.uware.jetpackcomposeuwaretutorial.presentation.screens.splash.SplashScreen
@@ -18,7 +19,8 @@ import br.com.uware.jetpackcomposeuwaretutorial.presentation.screens.splash.Spla
  *
  * @author Rodrigo Leutz
  * @version 1.0.0 - 2023 03 13 - Navigation no Jetpack Compose(HomeScreen, NameScreen, SplashScreen)
- * @version 1.0.1 - 2023 03 19 - Drawer Menu no Jetpack Compose(Adicionar NameInputScreen)
+ * @version 1.4.0 - 2023 03 19 - Drawer Menu no Jetpack Compose(Adicionar NameInputScreen)
+ * @version 1.6.0 - 2023 03 20 - Calculadora de IMC no Jetpack Compose(Adicionado ImcScreen)
  */
 @Composable
 fun AppNavigation(mainApp: MainApp) {
@@ -28,6 +30,9 @@ fun AppNavigation(mainApp: MainApp) {
     ) {
         composable(AppScreens.HomeScreen.name) {
             HomeScreen(mainApp = mainApp)
+        }
+        composable(AppScreens.ImcScreen.name) {
+            ImcScreen(mainApp = mainApp)
         }
         composable(AppScreens.NameInputScreen.name) {
             NameInputScreen(mainApp = mainApp)

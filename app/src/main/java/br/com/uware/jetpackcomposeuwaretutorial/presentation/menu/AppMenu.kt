@@ -1,6 +1,7 @@
 package br.com.uware.jetpackcomposeuwaretutorial.presentation.menu
 
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.rounded.Check
 import androidx.compose.material.icons.rounded.Home
 import androidx.compose.material.icons.rounded.Send
 import br.com.uware.jetpackcomposeuwaretutorial.R
@@ -16,6 +17,7 @@ import br.com.uware.jetpackcomposeuwaretutorial.presentation.navigation.AppScree
  *
  * @author Rodrigo Leutz
  * @version 1.0.0 - 2023 03 19 - Drawer Menu no Jetpack Compose
+ * @version 1.6.0 - 2023 03 21 - Calculadora de IMC no Jetpack Compose
  */
 class AppMenu {
     companion object {
@@ -29,6 +31,11 @@ class AppMenu {
                 name = UiText.StringResource(R.string.name_screen),
                 icon = Icons.Rounded.Send,
                 route = AppScreens.NameInputScreen.name
+            ),
+            AppMenuPM(
+                name = UiText.StringResource(R.string.imc_screen),
+                icon = Icons.Rounded.Check,
+                route = AppScreens.ImcScreen.name
             )
         )
     }
